@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Movie from "./Movie";
 
 const AllMovies = ({ movies, api }) => {

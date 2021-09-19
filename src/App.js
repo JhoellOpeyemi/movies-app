@@ -40,14 +40,8 @@ function App() {
 
   return (
     <div className="container">
-      {movies.length > 0 ? (
-        <>
-          <Header headerMovie={movies} api={api} getMovies={getMovies} />
-          <AllMovies movies={movies} getMovies={getMovies} api={api} />
-        </>
-      ) : (
-        ""
-      )}
+      <Header headerMovie={movies} api={api} getMovies={getMovies} />
+      <AllMovies movies={movies} getMovies={getMovies} api={api} />
     </div>
   );
 }

@@ -4,6 +4,7 @@
   --bg-color: #000;
   --text-color: #ececec;
   --pry-color: #f00;
+  --dark-pry-color: rgb(200, 0, 0);
   --white: #fff;
   --movie-bg-color: rgba(255, 255, 255, 0.11);
   --gap: 1rem;
@@ -25,7 +26,7 @@ body {
 
 .container {
   width: 92%;
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
   padding: 1.3rem 0;
 }
@@ -88,7 +89,6 @@ nav.open {
   flex-direction: column;
   cursor: pointer;
   transition: all 0.4s ease;
-  /* overflow: hidden; */
 }
 
 .line {
@@ -123,16 +123,23 @@ nav.open {
   width: 100%;
   padding: 0.7rem 1.3rem;
   background: rgba(255, 255, 255, 0.3);
-  color: var(--text-color);
-  border: 1px solid transparent;
+  color: var(--white);
+  font-size: 1.1rem;
+  border: 2px dashed transparent;
   border-radius: 1rem;
   letter-spacing: 2px;
   margin-bottom: 2rem;
 }
 
 .search-movie-input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.98rem;
+}
+
+.search-movie-input:hover,
+.search-movie-input:focus {
+  outline: none;
+  border: 2px dashed var(--pry-color);
 }
 
 .header-movie-group {
@@ -143,7 +150,7 @@ nav.open {
 
 .header-movie-img {
   width: 100%;
-  height: 450px;
+  height: 28rem;
   object-fit: cover;
   object-position: top;
 }
@@ -199,7 +206,8 @@ nav.open {
 }
 
 .movie {
-  flex-basis: 150px;
+  position: relative;
+  flex-basis: 9.375rem;
   flex-grow: 1;
   background: var(--movie-bg-color);
   border-radius: 0.6rem;
@@ -208,7 +216,9 @@ nav.open {
 
 .movie-img {
   width: 100%;
+  height: 14.375rem;
   max-height: 85%;
+  object-fit: cover;
 }
 
 .movie-details {
@@ -225,4 +235,38 @@ nav.open {
   padding: 0.4rem;
   background: var(--bg-color);
   border-radius: 0.3rem;
+}
+
+.movie-overview-group {
+  position: absolute;
+  top: 0;
+  background: var(--white);
+  height: 100%;
+  font-size: 0.9rem;
+  color: var(--bg-color);
+  padding: 0.3rem;
+  transform: translateY(250%);
+  transition: all 0.5s ease-in;
+  overflow-y: scroll;
+  cursor: pointer;
+}
+
+.movie-overview-group::-webkit-scrollbar {
+  width: 2px;
+  padding: 0.2rem;
+}
+
+.movie-overview-group::-webkit-scrollbar-thumb {
+  background: var(--pry-color);
+  border-radius: 1rem;
+}
+
+.movie.open .movie-overview-group {
+  transform: translateY(0);
+}
+
+.movie-overview-title {
+  font-size: 0.95rem;
+  margin: 0.3rem 0 0.5rem 0;
+  color: var(--dark-pry-color);
 }

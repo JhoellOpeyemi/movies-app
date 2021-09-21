@@ -190,7 +190,13 @@ nav.open {
 
 .movie-section-title {
   font-size: 1.5rem;
-  margin-bottom: 1.875rem;
+}
+
+.note {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.97rem;
+  font-style: italic;
+  margin: 0.3rem 0 1.875rem 0;
 }
 
 .movies-container {
@@ -245,10 +251,9 @@ nav.open {
   font-size: 0.9rem;
   color: var(--bg-color);
   padding: 0.3rem;
-  transform: translateY(250%);
-  transition: all 0.5s ease-in;
+  transform: translateY(230%);
+  transition: all 0.4s ease-in-out;
   overflow-y: scroll;
-  cursor: pointer;
 }
 
 .movie-overview-group::-webkit-scrollbar {

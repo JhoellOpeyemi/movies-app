@@ -9,8 +9,17 @@ const Movie = ({ movie, img }) => {
     }
   };
 
+  const openOverview = () => {
+    const movies = document.querySelectorAll(".movie");
+    movies.forEach((movie) => {
+      movie.addEventListener("click", () => {
+        movie.classList.toggle("open");
+      });
+    });
+  };
+
   return (
-    <div className="movie">
+    <div className="movie" onClick={openOverview}>
       <img
         src={
           movie.poster_path
